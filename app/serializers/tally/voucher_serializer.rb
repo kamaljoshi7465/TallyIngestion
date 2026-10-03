@@ -1,5 +1,3 @@
-# app/serializers/tally/voucher_serializer.rb
-
 module Tally
   class VoucherSerializer
     def initialize(voucher)
@@ -29,29 +27,30 @@ module Tally
       @voucher.ledger_entries.map do |entry|
         {
           id: entry.id,
+          position: entry.position,
+          sourceTag: entry.source_tag,
           ledgerName: entry.ledger_name,
           isDeemedPositive: entry.is_deemed_positive,
           amount: entry.amount,
-          xmlAttributes: entry.xml_attributes || {},
 
           billAllocations: entry.bill_allocations.map do |allocation|
             {
               id: allocation.id,
+              position: allocation.position,
               name: allocation.name,
               billType: allocation.bill_type,
-              amount: allocation.amount,
-              xmlAttributes: allocation.xml_attributes || {}
+              amount: allocation.amount
             }
           end,
 
           bankAllocations: entry.bank_allocations.map do |allocation|
             {
               id: allocation.id,
+              position: allocation.position,
               date: allocation.date,
               name: allocation.name,
               transactionType: allocation.transaction_type,
-              amount: allocation.amount,
-              xmlAttributes: allocation.xml_attributes || {}
+              amount: allocation.amount
             }
           end,
 
@@ -64,30 +63,34 @@ module Tally
       @voucher.inventory_entries.map do |entry|
         {
           id: entry.id,
+          position: entry.position,
+          sourceTag: entry.source_tag,
           stockItemName: entry.stock_item_name,
-          quantity: entry.quantity,
+          isDeemedPositive: entry.is_deemed_positive,
+          actualQty: entry.actual_qty,
+          billedQty: entry.billed_qty,
           rate: entry.rate,
           amount: entry.amount,
-          xmlAttributes: entry.xml_attributes || {},
 
           batchAllocations: entry.batch_allocations.map do |allocation|
             {
               id: allocation.id,
+              position: allocation.position,
+              godownName: allocation.godown_name,
               batchName: allocation.batch_name,
-              destinationGodownName: allocation.destination_godown_name,
-              quantity: allocation.quantity,
-              rate: allocation.rate,
-              amount: allocation.amount,
-              xmlAttributes: allocation.xml_attributes || {}
+              actualQty: allocation.actual_qty,
+              billedQty: allocation.billed_qty,
+              amount: allocation.amount
             }
           end,
 
           accountingAllocations: entry.accounting_allocations.map do |allocation|
             {
               id: allocation.id,
+              position: allocation.position,
               ledgerName: allocation.ledger_name,
+              isDeemedPositive: allocation.is_deemed_positive,
               amount: allocation.amount,
-              xmlAttributes: allocation.xml_attributes || {},
 
               rateDetails: serialize_rate_details(allocation)
             }
@@ -104,10 +107,9 @@ module Tally
       record.rate_details.map do |rate|
         {
           id: rate.id,
-          quantity: rate.quantity,
-          rate: rate.rate,
-          amount: rate.amount,
-          xmlAttributes: rate.xml_attributes || {}
+          position: rate.position,
+          dutyHead: rate.duty_head,
+          rate: rate.rate
         }
       end
     end
