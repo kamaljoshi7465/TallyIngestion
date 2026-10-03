@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ENVELOPE>
+  <HEADER>
+    <VERSION>1</VERSION>
+    <STATUS>1</STATUS>
+  </HEADER>
+  <BODY>
+    <DATA>
+      <COLLECTION>
+        <VOUCHER VCHTYPE="Receipt" ACTION="Create">
+          <DATE>20260715</DATE>
+          <VOUCHERTYPENAME>Receipt</VOUCHERTYPENAME>
+          <VOUCHERNUMBER>RCP-DEMO-001</VOUCHERNUMBER>
+          <PARTYLEDGERNAME>Demo Customer</PARTYLEDGERNAME>
+          <NARRATION>Sanitized receipt fixture</NARRATION>
+          <ALLLEDGERENTRIES.LIST>
+            <LEDGERNAME>Demo Bank</LEDGERNAME>
+            <ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE>
+            <AMOUNT>1250.00</AMOUNT>
+            <BANKALLOCATIONS.LIST>
+              <DATE>20260715</DATE>
+              <NAME>UTR-DEMO-001</NAME>
+              <TRANSACTIONTYPE>Inter Bank Transfer</TRANSACTIONTYPE>
+              <AMOUNT>1250.00</AMOUNT>
+            </BANKALLOCATIONS.LIST>
+          </ALLLEDGERENTRIES.LIST>
+          <ALLLEDGERENTRIES.LIST>
+            <LEDGERNAME>Demo Customer</LEDGERNAME>
+            <ISDEEMEDPOSITIVE>Yes</ISDEEMEDPOSITIVE>
+            <AMOUNT>-1250.00</AMOUNT>
+            <BILLALLOCATIONS.LIST>
+              <NAME>INV-DEMO-001</NAME>
+              <BILLTYPE>Agst Ref</BILLTYPE>
+              <AMOUNT>-1250.00</AMOUNT>
+            </BILLALLOCATIONS.LIST>
+          </ALLLEDGERENTRIES.LIST>
+        </VOUCHER>
+      </COLLECTION>
+    </DATA>
+  </BODY>
+</ENVELOPE>
+

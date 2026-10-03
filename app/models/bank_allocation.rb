@@ -1,0 +1,2 @@
+class BankAllocation < ApplicationRecord
+end

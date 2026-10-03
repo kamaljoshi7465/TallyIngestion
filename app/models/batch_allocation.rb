@@ -1,0 +1,2 @@
+class BatchAllocation < ApplicationRecord
+end

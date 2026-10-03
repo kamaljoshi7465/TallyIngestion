@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ENVELOPE>
+  <BODY>
+    <DATA>
+      <COLLECTION>
+        <VOUCHER VCHTYPE="Sales" ACTION="Create">
+          <DATE>20260716</DATE>
+          <VOUCHERTYPENAME>Sales</VOUCHERTYPENAME>
+          <VOUCHERNUMBER>SAL-DEMO-001</VOUCHERNUMBER>
+          <PARTYLEDGERNAME>Demo Customer</PARTYLEDGERNAME>
+          <PERSISTEDVIEW>Invoice Voucher View</PERSISTEDVIEW>
+          <LEDGERENTRIES.LIST>
+            <LEDGERNAME>Demo Customer</LEDGERNAME>
+            <ISDEEMEDPOSITIVE>Yes</ISDEEMEDPOSITIVE>
+            <AMOUNT>-118.00</AMOUNT>
+            <BILLALLOCATIONS.LIST>
+              <NAME>SAL-DEMO-001</NAME>
+              <BILLTYPE>New Ref</BILLTYPE>
+              <AMOUNT>-118.00</AMOUNT>
+            </BILLALLOCATIONS.LIST>
+          </LEDGERENTRIES.LIST>
+          <LEDGERENTRIES.LIST>
+            <LEDGERNAME>Output CGST</LEDGERNAME>
+            <ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE>
+            <AMOUNT>9.00</AMOUNT>
+            <RATEDETAILS.LIST>
+              <GSTRATEDUTYHEAD>CGST</GSTRATEDUTYHEAD>
+              <GSTRATE>9</GSTRATE>
+            </RATEDETAILS.LIST>
+          </LEDGERENTRIES.LIST>
+          <LEDGERENTRIES.LIST>
+            <LEDGERNAME>Output SGST</LEDGERNAME>
+            <ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE>
+            <AMOUNT>9.00</AMOUNT>
+            <RATEDETAILS.LIST>
+              <GSTRATEDUTYHEAD>SGST/UTGST</GSTRATEDUTYHEAD>
+              <GSTRATE>9</GSTRATE>
+            </RATEDETAILS.LIST>
+          </LEDGERENTRIES.LIST>
+          <ALLINVENTORYENTRIES.LIST>
+            <STOCKITEMNAME>Demo Item</STOCKITEMNAME>
+            <ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE>
+            <ACTUALQTY>2 PCS</ACTUALQTY>
+            <BILLEDQTY>2 PCS</BILLEDQTY>
+            <RATE>50.00/PCS</RATE>
+            <AMOUNT>100.00</AMOUNT>
+            <BATCHALLOCATIONS.LIST>
+              <GODOWNNAME>Main Location</GODOWNNAME>
+              <BATCHNAME>Primary Batch</BATCHNAME>
+              <ACTUALQTY>2 PCS</ACTUALQTY>
+              <BILLEDQTY>2 PCS</BILLEDQTY>
+              <AMOUNT>100.00</AMOUNT>
+            </BATCHALLOCATIONS.LIST>
+            <ACCOUNTINGALLOCATIONS.LIST>
+              <LEDGERNAME>Demo Sales</LEDGERNAME>
+              <ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE>
+              <AMOUNT>100.00</AMOUNT>
+              <RATEDETAILS.LIST>
+                <GSTRATEDUTYHEAD>CGST</GSTRATEDUTYHEAD>
+                <GSTRATE>9</GSTRATE>
+              </RATEDETAILS.LIST>
+              <RATEDETAILS.LIST>
+                <GSTRATEDUTYHEAD>SGST/UTGST</GSTRATEDUTYHEAD>
+                <GSTRATE>9</GSTRATE>
+              </RATEDETAILS.LIST>
+            </ACCOUNTINGALLOCATIONS.LIST>
+          </ALLINVENTORYENTRIES.LIST>
+        </VOUCHER>
+      </COLLECTION>
+    </DATA>
+  </BODY>
+</ENVELOPE>
